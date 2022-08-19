@@ -49,12 +49,35 @@ end
 
 def create_contact
   puts "Creating Contact"
+  puts "What is the new contact's first name?"
+  first_name = gets.strip
+  puts "What is the new contact's last name?"
+  last_name = gets.strip
+  puts "What is the new contact's email?"
+  email = gets.strip
+  puts "What is the new contact's phone?"
+  phone = gets.strip
+  puts "What is the new contact's address?"
+  address = gets.strip
 
+  new_contact = { first_name: first_name, last_name: last_name, email: email, phone: phone, address: address }
+  # p new_contact
+  @contacts << new_contact
+  # p @contacts
 end
 
 def view_contacts
   puts "Viewing all Contacts"
-  
+
+  @contacts.each do |contact|
+    puts "First Name: #{contact[:first_name]}"
+    puts "Last Name: #{contact[:last_name]}"
+    puts "Email: #{contact[:email]}"
+    puts "Phone: #{contact[:phone]}"
+    puts "Address: #{contact[:address]}"
+    puts 
+  end
+
 end
 
 menu 
